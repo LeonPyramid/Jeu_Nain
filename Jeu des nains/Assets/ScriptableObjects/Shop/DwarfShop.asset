@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01c9a589f3a32ac45be7cd4bf2ce6154, type: 3}
+  m_Name: DwarfShop
+  m_EditorClassIdentifier: 
+  text: []
+  chance: 0
+  typeAvailable: 
+  beerValue: 0
+  beerFork:
+    min: 0
+    max: 0
+  beerDialog:
+  - inTxt: "Vous croisez une \xE9quipe de nain entrain de rebrousser chemin, ces l\xE2ches
+      acceptent de vous c\xE9der un peu de leur bi\xE8re \xE0 contre coeur."
+    outTxt: 
+    isDistrib: 0
+    distribLoose: 
+  artefactList:
+  - {fileID: 0}
+  artefactDialog: []
+  memberList: []
+  memberFork:
+    min: 0
+    max: 0
+  memberDialog:
+  - inTxt: "Vous croisez une \xE9quipe de nain entrain de rebrousser chemin, une partit
+      d'entre eux \xE0 qui il reste un peu de courage vous propose de vous accompagner
+      moyennant finance, ils restent nains apr\xE8s tout"
+    outTxt: 
+    isDistrib: 0
+    distribLoose: 
+  stuffValue: 0
+  stuffFork:
+    min: 0
+    max: 0
+  stuffDialog:
+  - inTxt: "Vous croisez une \xE9quipe de nain entrain de rebrousser chemin, ces l\xE2ches
+      vous proposent d'acheter leurs \xE9quipements, ils n'en auront plus besoin"
+    outTxt: 
+    isDistrib: 0
+    distribLoose: 
