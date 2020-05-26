@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ea94a4c9fd9a740954f23d5d9dce97, type: 3}
   m_Name: Mine
   m_EditorClassIdentifier: 
-  textIn: []
+  textIn:
+  - "Vous entrez dans une ancienne zone de minage, votre homme propose de vous arr\xEAter
+    pour exploiter les minerais rares."
   chance: 0
-  textOut: 
+  textOut: Vous quittez la mine.
   proba: 0
   goldAmmount:
     min: 0
     max: 0
   stuffCost: 0
-  victory: 
-  defeat: 
+  victory: "Votre \xE9quipe m\xE9rite sa r\xE9putation, vos coffres d\xE9bordent d'or."
+  defeat: "Vous appelez \xE7a une mine !"
