@@ -15,7 +15,6 @@ public class Shop : Room
     public List<SellDialog> artefactDialog;
     //TODO: Gérer les retours du gosse bizarre
     [Header("Member")]
-    public List<CharacterData> memberList;
     public Fork memberFork;
     public List<SellDialog> memberDialog;
     [Header("Stuff")]
@@ -41,4 +40,5 @@ public struct SellDialog
     public bool isDistrib;
     [TextArea(3, 10)]
     public string distribLoose;
+    public CharacterData data;
 }

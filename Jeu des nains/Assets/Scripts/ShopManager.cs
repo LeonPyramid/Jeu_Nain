@@ -5,54 +5,68 @@ using static Function;
 
 public class ShopManager : MonoBehaviour
 {
-    private static ShopManager _instance;
-    public static ShopManager Instance { get { return _instance; } }
+    public static ShopManager Instance { get; private set; }
     void Awake()
     {
-        _instance = this;
+        Instance = this;
     }
 
+        private SellInfo info;
 
-    public void GetSell(Shop shop)
+    public void SetSell(Shop shop)
     {
         //TODO: envoi des dialogues
         LootType type = RandomGet(shop.typeAvailable);
-        int price;
-        int amount;
-        Artefact artefact;
-        List<CharacterData> team;
-        SellDialog dialog;
         switch (type)
         {
             case LootType.artefact:
-                dialog = RandomGet(shop.artefactDialog);
-                artefact = RandomGet(shop.artefactList);
-                price = artefact.price;
+                info.dialog = RandomGet(shop.artefactDialog);
+                info.artefact = RandomGet(shop.artefactList);
+                info.price = info.artefact.price;
                 //TODO:UI
                 break;
             case LootType.beer:
-                dialog = RandomGet(shop.beerDialog);
-                amount = Random.Range(shop.beerFork.min, shop.beerFork.max);
-                price = amount * shop.beerValue;
+                info.dialog = RandomGet(shop.beerDialog);
+                info.amount = Random.Range(shop.beerFork.min, shop.beerFork.max);
+                info.price = info.amount * shop.beerValue;
                 break;
             case LootType.stuff:
-                dialog = RandomGet(shop.stuffDialog);
-                amount = Random.Range(shop.stuffFork.min, shop.stuffFork.max);
-                price = amount * shop.stuffValue;
+                info.dialog = RandomGet(shop.stuffDialog);
+                info.amount = Random.Range(shop.stuffFork.min, shop.stuffFork.max);
+                info.price = info.amount * shop.stuffValue;
                 break;
             case LootType.character:
-                dialog = RandomGet(shop.memberDialog);
-                amount = Random.Range(shop.memberFork.min, shop.memberFork.max);
-
+                info.dialog = RandomGet(shop.memberDialog);
+                info.amount = Random.Range(shop.memberFork.min, shop.memberFork.max);
+                CharacterData data = info.dialog.data;
+                info.price = 0;
+                for (int i = 0; i < info.amount; i++)
+                {
+                    info.price += data.price;
+                    info.team.Add(data);
+                }
                 break;
             default:
                 Debug.LogError("Type pas connu!");
                 break;
         }
+
+
     }
 
-    public T RandomGet<T>(List<T> list)
+    public SellInfo GetSell()
     {
-        return list[Random.Range(0, list.Count)];
+        return info;
     }
+
+}
+
+[System.Serializable]
+public class SellInfo
+{
+    public int price = 0;
+    public int amount = 0;
+    public Artefact artefact;
+    public List<CharacterData> team = new List<CharacterData>();
+    public SellDialog dialog = new SellDialog();
 }
