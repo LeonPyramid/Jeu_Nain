@@ -19,10 +19,24 @@ MonoBehaviour:
   beerFork:
     min: 0
     max: 0
-  beerDialog: []
+  beerDialog:
+  - inTxt: "vous rencontrez un vieux magicien fantomatique, il ne semble pas hostile
+      et vous montre une fiole d'alcool pur, le regard qui il vous a lanc\xE9 quand
+      il a vu l'un de vous la gouter de disant, je cite : \"\xE7a me rappelle le biberon
+      de mon fils\" restera \xE0 tout jamais dans votre m\xE9moire."
+    outTxt: 
+    isDistrib: 1
+    distribLoose: 
+    data: {fileID: 0}
   artefactList: []
-  artefactDialog: []
-  memberList: []
+  artefactDialog:
+  - inTxt: "vous rencontrez un vieux magicien fantomatique, il ne semble pas hostile
+      et il vous montre un objet magique, apparement c'est cool m\xEAme si vous n'avait
+      pas completement compris comment il fonctionne"
+    outTxt: 
+    isDistrib: 0
+    distribLoose: 
+    data: {fileID: 0}
   memberFork:
     min: 0
     max: 0
@@ -31,4 +45,11 @@ MonoBehaviour:
   stuffFork:
     min: 0
     max: 0
-  stuffDialog: []
+  stuffDialog:
+  - inTxt: 
+    outTxt: 
+    isDistrib: 0
+    distribLoose: "vous rencontrez un vieux magicien fantomatique, il ne semble pas
+      hostile et vous offre une paartie de l'\xE9quipement de son l'aboratoir, vous
+      n'avez ps la moiddre id\xE9e de comment il fonctionne mais on verra plus tard."
+    data: {fileID: 0}

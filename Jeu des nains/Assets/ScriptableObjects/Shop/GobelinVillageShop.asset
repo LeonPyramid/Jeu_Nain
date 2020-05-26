@@ -19,10 +19,23 @@ MonoBehaviour:
   beerFork:
     min: 0
     max: 0
-  beerDialog: []
+  beerDialog:
+  - inTxt: "Vous arrivez dans un village de gobelin, ils vous propose de leur acheter
+      un peu de gnole de champignon, loin de la bi\xE8re naine mais la soif n'attend
+      pas"
+    outTxt: 
+    isDistrib: 0
+    distribLoose: 
+    data: {fileID: 0}
   artefactList: []
-  artefactDialog: []
-  memberList: []
+  artefactDialog:
+  - inTxt: "Vous arrivez dans un village de gobelin, ils ont un objet de valeur \xE0
+      vos proposern ils l'ont surement vol\xE9 mais ils sont trop nombreux pour que
+      vous leur disiez"
+    outTxt: 
+    isDistrib: 0
+    distribLoose: 
+    data: {fileID: 0}
   memberFork:
     min: 0
     max: 0
@@ -31,4 +44,11 @@ MonoBehaviour:
   stuffFork:
     min: 0
     max: 0
-  stuffDialog: []
+  stuffDialog:
+  - inTxt: "Vous arrivez dans un village de gobelin, il vous propose de l'\xE9quipement
+      pour continuer votre aventure, de l'\xE9quipement gobelin mais \xE7a pourra
+      d\xE9panner "
+    outTxt: 
+    isDistrib: 0
+    distribLoose: 
+    data: {fileID: 0}
