@@ -13,12 +13,20 @@ MonoBehaviour:
   m_Name: Dwarf
   m_EditorClassIdentifier: 
   Entering: 
-  shops: []
-  empties: []
-  loots: []
-  fights: []
   lore: {fileID: 0}
+  shops:
+  - {fileID: 11400000, guid: 38b5787aa5bf4134aa5b3af743ed2f60, type: 2}
   shopProba: 0
+  shopLogo: {fileID: 0}
+  empties: []
+  emptyProba: 0
+  emptylogo: {fileID: 0}
+  loots: []
+  lootProba: 0
+  lootLogo: {fileID: 0}
+  fights: []
+  fightProba: 0
+  figtLogo: {fileID: 0}
   fightLoose:
     min: 0
     max: 0

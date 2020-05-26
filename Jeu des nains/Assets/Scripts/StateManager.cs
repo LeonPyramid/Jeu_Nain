@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class StateManager : MonoBehaviour
 {
-    private static StateManager _instance;
-    public static StateManager Instance { get { return _instance; } }
+    public static StateManager Instance { get; private set; }
+    private GameParameters parameters = GameManager.Instance.parameters;
     void Awake()
     {
-        _instance = this;
+        Instance = this;
+        team = parameters.team;
+        artefacts = new List<Artefact>();
+        beer = parameters.beer;
+        stuff = parameters.stuff;
+        UpdateStats();
     }
     public List<CharacterData> team { get; private set; }
     public List<Artefact> artefacts { get; private set; }
@@ -43,7 +48,7 @@ public class StateManager : MonoBehaviour
     public void AddMember(CharacterData chr)
     {
         team.Add(chr);
-        UpdateBeerConsuption();
+        UpdateStats();
         //TODO: CHanger l'affichage
     }
 
@@ -55,7 +60,7 @@ public class StateManager : MonoBehaviour
             mb = Random.Range(0, team.Count);
             if (!team[mb].immortal) { team.RemoveAt(mb); }
         }
-        UpdateBeerConsuption();
+        UpdateStats();
         //TODO: CHanger l'affichage
     }
 
@@ -66,7 +71,7 @@ public class StateManager : MonoBehaviour
         beer -= beerConsumed;
     }
 
-    private void UpdateBeerConsuption()
+    private void UpdateStats()
     {
         int cnt = 0;
         foreach (CharacterData item in team)
@@ -74,7 +79,10 @@ public class StateManager : MonoBehaviour
             cnt += item.beerConsumption;
         }
         beerConsumed = cnt;
+        stuffMax = team.Count * parameters.maxStuffByMember;
+        beerMax = team.Count * parameters.maxBeerByMember;
     }
+
 
     public void AddArtefact(Artefact artefact)
     {

@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class LootManager : MonoBehaviour
 {
-    private static LootManager _instance;
-    public static LootManager Instance { get { return _instance; } }
+    public static LootManager Instance { get; private set; }
     void Awake()
     {
-        _instance = this;
+        Instance = this;
     }
 
     /// <summary>

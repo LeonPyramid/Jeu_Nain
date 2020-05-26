@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c9a589f3a32ac45be7cd4bf2ce6154, type: 3}
   m_Name: MagicianShop
   m_EditorClassIdentifier: 
-  text: []
+  textIn: []
   chance: 0
+  textOut: 
   typeAvailable: 
   beerValue: 0
   beerFork:
@@ -25,8 +26,9 @@ MonoBehaviour:
       il a vu l'un de vous la gouter de disant, je cite : \"\xE7a me rappelle le biberon
       de mon fils\" restera \xE0 tout jamais dans votre m\xE9moire."
     outTxt: 
-    isDistrib: 1
+    isDistrib: 0
     distribLoose: 
+    distribWin: 
     data: {fileID: 0}
   artefactList: []
   artefactDialog:
@@ -36,6 +38,7 @@ MonoBehaviour:
     outTxt: 
     isDistrib: 0
     distribLoose: 
+    distribWin: 
     data: {fileID: 0}
   memberFork:
     min: 0
@@ -46,10 +49,11 @@ MonoBehaviour:
     min: 0
     max: 0
   stuffDialog:
-  - inTxt: 
+  - inTxt: "vous rencontrez un vieux magicien fantomatique, il ne semble pas hostile
+      et vous offre une paartie de l'\xE9quipement de son l'aboratoir, vous n'avez
+      ps la moiddre id\xE9e de comment il fonctionne mais on verra plus tard."
     outTxt: 
     isDistrib: 0
-    distribLoose: "vous rencontrez un vieux magicien fantomatique, il ne semble pas
-      hostile et vous offre une paartie de l'\xE9quipement de son l'aboratoir, vous
-      n'avez ps la moiddre id\xE9e de comment il fonctionne mais on verra plus tard."
+    distribLoose: 
+    distribWin: 
     data: {fileID: 0}

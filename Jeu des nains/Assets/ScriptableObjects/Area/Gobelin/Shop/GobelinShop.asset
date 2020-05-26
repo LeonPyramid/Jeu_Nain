@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c9a589f3a32ac45be7cd4bf2ce6154, type: 3}
   m_Name: GobelinShop
   m_EditorClassIdentifier: 
-  text: []
+  textIn: []
   chance: 0
+  textOut: 
   typeAvailable: 
   beerValue: 0
   beerFork:
@@ -25,6 +26,7 @@ MonoBehaviour:
     outTxt: 
     isDistrib: 0
     distribLoose: 
+    distribWin: 
     data: {fileID: 0}
   artefactList:
   - {fileID: 0}
@@ -34,6 +36,7 @@ MonoBehaviour:
     outTxt: 
     isDistrib: 0
     distribLoose: 
+    distribWin: 
     data: {fileID: 0}
   memberFork:
     min: 0
@@ -43,6 +46,7 @@ MonoBehaviour:
     outTxt: 
     isDistrib: 0
     distribLoose: 
+    distribWin: 
     data: {fileID: 0}
   stuffValue: 0
   stuffFork:
@@ -54,4 +58,5 @@ MonoBehaviour:
     outTxt: 
     isDistrib: 0
     distribLoose: 
+    distribWin: 
     data: {fileID: 0}
