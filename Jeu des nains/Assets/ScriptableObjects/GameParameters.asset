@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fee279ec2bb28c46a1f40a44e5ca097, type: 3}
+  m_Name: GameParameters
+  m_EditorClassIdentifier: 
+  Zone1: {fileID: 11400000, guid: 8c119d5bf4c814a40aa6aef81aade788, type: 2}
+  depthZone1: 20
+  Zone2: {fileID: 0}
+  depthZone2: 0
+  Zone3: {fileID: 0}
+  depthZone3: 0
+  Zone4: {fileID: 0}
+  depthZone4: 0
+  team:
+  - {fileID: 11400000, guid: c73f5e18723301c4c8773249972dcba3, type: 2}
+  - {fileID: 11400000, guid: c73f5e18723301c4c8773249972dcba3, type: 2}
+  - {fileID: 11400000, guid: c73f5e18723301c4c8773249972dcba3, type: 2}
+  - {fileID: 11400000, guid: c73f5e18723301c4c8773249972dcba3, type: 2}
+  - {fileID: 11400000, guid: c73f5e18723301c4c8773249972dcba3, type: 2}
+  - {fileID: 11400000, guid: c73f5e18723301c4c8773249972dcba3, type: 2}
+  - {fileID: 11400000, guid: c73f5e18723301c4c8773249972dcba3, type: 2}
+  - {fileID: 11400000, guid: c73f5e18723301c4c8773249972dcba3, type: 2}
+  - {fileID: 11400000, guid: c73f5e18723301c4c8773249972dcba3, type: 2}
+  - {fileID: 11400000, guid: c73f5e18723301c4c8773249972dcba3, type: 2}
+  - {fileID: 11400000, guid: c73f5e18723301c4c8773249972dcba3, type: 2}
+  - {fileID: 11400000, guid: c73f5e18723301c4c8773249972dcba3, type: 2}
+  - {fileID: 11400000, guid: c73f5e18723301c4c8773249972dcba3, type: 2}
+  - {fileID: 11400000, guid: c73f5e18723301c4c8773249972dcba3, type: 2}
+  - {fileID: 11400000, guid: c73f5e18723301c4c8773249972dcba3, type: 2}
+  - {fileID: 11400000, guid: c73f5e18723301c4c8773249972dcba3, type: 2}
+  - {fileID: 11400000, guid: c73f5e18723301c4c8773249972dcba3, type: 2}
+  - {fileID: 11400000, guid: c73f5e18723301c4c8773249972dcba3, type: 2}
+  - {fileID: 11400000, guid: c73f5e18723301c4c8773249972dcba3, type: 2}
+  - {fileID: 11400000, guid: c73f5e18723301c4c8773249972dcba3, type: 2}
+  artefacts: []
+  beer: 50
+  stuff: 50
+  gold: 50
+  maxStuffByMember: 5
+  maxBeerByMember: 8
+  fightEnterButton: Combattre
+  fightFleeButton: Fuir
+  buyButton: Acheter
+  leaveButton: Partir
+  exploitBUtton: Exploiter
+  enterButton: Examiner
+  noMoney: Vous n'avez pas assez d'argent!
+  presentation:
+  - Bonjour
+  - Oui
+  - Clique

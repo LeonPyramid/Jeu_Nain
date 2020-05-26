@@ -142,6 +142,29 @@ public class GameManager : MonoBehaviour
                         StateManager.Instance.KillMember(battle);
                     }
                 }
+                if (Random.value > actualArea.fightProba)
+                {
+                    string dialog = "";
+                    int amount = -Random.Range(actualArea.fightLoose.min, actualArea.fightLoose.max);
+                    int loose = Random.Range(0, 2);
+                    switch (loose)
+                    {
+                        case 0:
+                            dialog += "\nVous avez perdu " + amount + "L de bière!";
+                            LootManager.Instance.AddLoot(LootType.beer, amount);
+                            break;
+                        case 1:
+                            dialog += "\nVous avez perdu " + amount + "pièces d'équipement!";
+                            LootManager.Instance.AddLoot(LootType.stuff, amount);
+                            break;
+                        case 2:
+                            dialog += "\nVous avez perdu " + amount + " d'or!";
+                            LootManager.Instance.AddLoot(LootType.gold, amount);
+                            break;
+                        default:
+                            break;
+                    }
+                }
                 break;
             case RoomType.Empty:
                 if (isRight)
