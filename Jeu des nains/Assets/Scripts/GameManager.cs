@@ -33,7 +33,8 @@ public class GameManager : MonoBehaviour
         Instance = this;
         actualArea = parameters.Zone1;
         roomType = RoomType.None;
-        //TODO: Envoyer le dialogue de début au dialogGest
+        TextBox.Instance.AddText(parameters.presentation, false, leftTxt: "entrer", rightTxt: "entrer");
+        LoadNextArea();
     }
 
     public void LoadNextArea()

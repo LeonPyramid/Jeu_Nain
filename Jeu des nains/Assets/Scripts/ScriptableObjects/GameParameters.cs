@@ -34,5 +34,7 @@ public class GameParameters : ScriptableObject
     public string enterButton;//Pour les salles pièges/loots
     [TextArea(3, 10)]
     public string noMoney;
+    [TextArea(3, 10)]
+    public List<string> presentation;
 
 }

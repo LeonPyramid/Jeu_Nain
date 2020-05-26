@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Lore", menuName = "Data/Lore")]
+[CreateAssetMenu(fileName = "Fight", menuName = "Data/Room/Fight")]
 public class Fight : Room
 {
     [TextArea(3, 10)]
