@@ -12,4 +12,5 @@ public class CharacterData : ScriptableObject
     public Image Image;
     public string lore;
     public int beerConsumption;
+    public bool immortal;
 }

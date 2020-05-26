@@ -19,7 +19,7 @@ public class LootManager : MonoBehaviour
     /// <param name="value">la valeur si pas artefact</param>
     /// <param name="artefact">l'artefact</param>
     /// <param name="members">l'artefact</param>
-    public void LootHandler(LootType type,int value = 0,Artefact artefact = null,List<CharacterData> members = null)
+    public void AddLoot(LootType type,int value = 0,Artefact artefact = null,List<CharacterData> members = null)
     {
         switch (type)
         {

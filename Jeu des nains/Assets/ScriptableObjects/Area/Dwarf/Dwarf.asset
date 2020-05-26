@@ -9,13 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01c9a589f3a32ac45be7cd4bf2ce6154, type: 3}
-  m_Name: Room
+  m_Script: {fileID: 11500000, guid: 688e045c5b4b3f5449f6dcc39f0e039b, type: 3}
+  m_Name: Dwarf
   m_EditorClassIdentifier: 
-  text: []
-  chance: 0
-  typeAvailable: 
-  beerValue: 0
-  artefactList: []
-  memberValue: 0
-  stuffValue: 0
+  Entering: 
+  shops: []
+  empties: []
+  loots: []
+  fights: []
+  lore: {fileID: 0}
+  shopProba: 0
+  fightLoose:
+    min: 0
+    max: 0

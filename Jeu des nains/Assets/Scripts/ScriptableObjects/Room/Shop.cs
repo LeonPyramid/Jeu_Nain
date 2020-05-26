@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Room", menuName = "Data/Room/Shop")]
+[CreateAssetMenu(fileName = "Shop", menuName = "Data/Room/Shop")]
 public class Shop : Room
 {
     public List<LootType> typeAvailable;
@@ -40,5 +40,7 @@ public struct SellDialog
     public bool isDistrib;
     [TextArea(3, 10)]
     public string distribLoose;
+    [TextArea(3, 10)]
+    public string distribWin;
     public CharacterData data;
 }

@@ -16,8 +16,8 @@ public class ShopManager : MonoBehaviour
     public void SetSell(Shop shop)
     {
         //TODO: envoi des dialogues
-        LootType type = RandomGet(shop.typeAvailable);
-        switch (type)
+        info.type = RandomGet(shop.typeAvailable);
+        switch (info.type)
         {
             case LootType.artefact:
                 info.dialog = RandomGet(shop.artefactDialog);
@@ -29,11 +29,13 @@ public class ShopManager : MonoBehaviour
                 info.dialog = RandomGet(shop.beerDialog);
                 info.amount = Random.Range(shop.beerFork.min, shop.beerFork.max);
                 info.price = info.amount * shop.beerValue;
+                //TODO:UI
                 break;
             case LootType.stuff:
                 info.dialog = RandomGet(shop.stuffDialog);
                 info.amount = Random.Range(shop.stuffFork.min, shop.stuffFork.max);
                 info.price = info.amount * shop.stuffValue;
+                //TODO:UI
                 break;
             case LootType.character:
                 info.dialog = RandomGet(shop.memberDialog);
@@ -45,6 +47,7 @@ public class ShopManager : MonoBehaviour
                     info.price += data.price;
                     info.team.Add(data);
                 }
+                //TODO:UI
                 break;
             default:
                 Debug.LogError("Type pas connu!");
@@ -64,6 +67,7 @@ public class ShopManager : MonoBehaviour
 [System.Serializable]
 public class SellInfo
 {
+    public LootType type;
     public int price = 0;
     public int amount = 0;
     public Artefact artefact;

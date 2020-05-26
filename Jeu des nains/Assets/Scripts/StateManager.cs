@@ -53,7 +53,7 @@ public class StateManager : MonoBehaviour
         while (amount > 0)
         {
             mb = Random.Range(0, team.Count);
-            team.RemoveAt(mb);
+            if (!team[mb].immortal) { team.RemoveAt(mb); }
         }
         UpdateBeerConsuption();
         //TODO: CHanger l'affichage
