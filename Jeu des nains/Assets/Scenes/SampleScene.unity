@@ -316,7 +316,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 389837989}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -509,6 +509,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters: {fileID: 0}
   actualArea: {fileID: 0}
+  actualRoom: {fileID: 0}
+  areas: []
+  futuredepth: 
+  entering: 0
 --- !u!1 &775500364
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,7 +559,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 775500364}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -947,6 +951,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ButtonLeft
       objectReference: {fileID: 0}
+    - target: {fileID: 3393826569843266509, guid: eb67128dd839b794596b1c6cf7603979,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3393826569843266510, guid: eb67128dd839b794596b1c6cf7603979,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1093,6 +1102,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ButtonRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393826569843266509, guid: eb67128dd839b794596b1c6cf7603979,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3393826569843266510, guid: eb67128dd839b794596b1c6cf7603979,
         type: 3}
@@ -1245,6 +1259,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ButtonRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393826569843266509, guid: eb67128dd839b794596b1c6cf7603979,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3393826569843266510, guid: eb67128dd839b794596b1c6cf7603979,
         type: 3}
@@ -1487,6 +1506,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ButtonLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393826569843266509, guid: eb67128dd839b794596b1c6cf7603979,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3393826569843266510, guid: eb67128dd839b794596b1c6cf7603979,
         type: 3}

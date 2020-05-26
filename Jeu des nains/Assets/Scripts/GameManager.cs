@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     private List<string> dial;
     private int nbEnnemies;
     public List<Area> areas;
+    public List<int> futuredepth;//TODO: Gestion des profondeurs
     private List<LoreList> loreList;
     private float loreproba;
     public bool entering;
@@ -29,6 +30,8 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         dial = new List<string>();
+        areas = new List<Area>();
+        areas.Add(parameters.Zone1);
         depht = 0;
         Instance = this;
         actualArea = parameters.Zone1;

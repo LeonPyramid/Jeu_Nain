@@ -18,10 +18,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 38b5787aa5bf4134aa5b3af743ed2f60, type: 2}
   shopProba: 0.25
   shopLogo: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  empties: []
+  empties:
+  - {fileID: 11400000, guid: 2ff3ae968f437974c99e8511ad8c38f6, type: 2}
   emptyProba: 0.25
   emptyLogo: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  loots: []
+  loots:
+  - {fileID: 11400000, guid: 81672aaae6d77e84a95cd2dfaba6f998, type: 2}
   lootProba: 0.25
   lootLogo: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   fights: []
