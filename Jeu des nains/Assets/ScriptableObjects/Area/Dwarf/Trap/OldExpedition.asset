@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1914eb258f0cd94ca0f0b393b627632, type: 3}
   m_Name: OldExpedition
   m_EditorClassIdentifier: 
-  textIn: []
+  textIn:
+  - "Vous trouvez au d\xE9tour d'un couloir les squelettes d'une ancienne \xE9quipe
+    naine, il n'\xE9tait pas digne d'acc\xE9der \xE0 la gloire, vous si !"
   chance: 0
-  textOut: 
+  textOut: "Vous laissez ces faibles \xE0 leur sort, personne ne se souviendra d'eux"
   type: 0
   amountFork:
     min: 0
     max: 0
   artefact: {fileID: 0}
   mobType: {fileID: 0}
-  entered: 
+  entered: "Vous r\xE9cup\xE9rez leur affaire, ils auraient fait l m\xEAme chose "

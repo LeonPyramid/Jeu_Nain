@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 251ba58de90609448ba2e7363883a5d7, type: 3}
+  m_Name: GobelinFou
+  m_EditorClassIdentifier: 
+  textIn:
+  - "Vous voyez un groupe de gobelin \xE9trange au loin, ils parraissent hostils et
+    on l'air d'\xEAtre entrain de s'entre devorer"
+  chance: 0
+  textOut: Vous quittez la zone
+  win: "Vous les avez \xE9cras\xE9, \xE0 vous le butin"
+  loose: "Votre p\xE8re aurait honte si il n'\xE9tait pas alcoolique "
+  fleeLose: "Un des gobelin vous \xE0 ratrapp\xE9, en l'\xE9crasant un de vos homme
+    \xE0 tout d\xE9gueulass\xE9."
+  ennemyAmount:
+    min: 2
+    max: 5
+  ennemy: {fileID: 11400000, guid: 798a7a8ba42ecc84690d9db8980bac50, type: 2}
+  type: 2
+  amountFork:
+    min: 5
+    max: 10
+  artefact: {fileID: 0}
