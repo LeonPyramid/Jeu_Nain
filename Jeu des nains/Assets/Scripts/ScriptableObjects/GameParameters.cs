@@ -32,5 +32,7 @@ public class GameParameters : ScriptableObject
     public string leaveButton;
     public string exploitBUtton;//pour les salles vides
     public string enterButton;//Pour les salles pièges/loots
+    [TextArea(3, 10)]
+    public string noMoney;
 
 }

@@ -16,5 +16,5 @@ public class Fight : Room
     [Header("Loot")]
     public LootType type;
     public Fork amountFork;
-    public List<Artefact> artefacts;
+    public Artefact artefact;
 }

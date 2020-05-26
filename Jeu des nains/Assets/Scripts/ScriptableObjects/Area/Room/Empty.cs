@@ -8,6 +8,8 @@ public class Empty : Room
     public float proba;
     public Fork goldAmmount;
     public int stuffCost;
+    [TextArea(3, 10)]
     public string victory;
+    [TextArea(3, 10)]
     public string defeat;
 }

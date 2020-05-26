@@ -23,30 +23,35 @@ public class ShopManager : MonoBehaviour
                 info.dialog = RandomGet(shop.artefactDialog);
                 info.artefact = RandomGet(shop.artefactList);
                 info.price = info.artefact.price;
+                info.dialog.inTxt += "\nIl vous le vend pour " + info.price.ToString() + " or.";
                 //TODO:UI
                 break;
             case LootType.beer:
                 info.dialog = RandomGet(shop.beerDialog);
                 info.amount = Random.Range(shop.beerFork.min, shop.beerFork.max);
                 info.price = info.amount * shop.beerValue;
+                info.dialog.inTxt += "\nIl vous en vend " + info.amount.ToString() + " pour " + info.price.ToString() + " or.";
                 //TODO:UI
                 break;
             case LootType.stuff:
                 info.dialog = RandomGet(shop.stuffDialog);
                 info.amount = Random.Range(shop.stuffFork.min, shop.stuffFork.max);
                 info.price = info.amount * shop.stuffValue;
+                info.dialog.inTxt += "\nIl vous en vend " + info.amount.ToString() + " pour " + info.price.ToString() + " or.";
                 //TODO:UI
                 break;
             case LootType.character:
                 info.dialog = RandomGet(shop.memberDialog);
                 info.amount = Random.Range(shop.memberFork.min, shop.memberFork.max);
                 CharacterData data = info.dialog.data;
+                info.dialog.inTxt += "\nC'est une équipe composée de " + info.amount.ToString() + " " + data.race + "s.";
                 info.price = 0;
                 for (int i = 0; i < info.amount; i++)
                 {
                     info.price += data.price;
                     info.team.Add(data);
                 }
+                info.dialog.inTxt +="\nIls se propose de ce joindre à vous pour " + info.price.ToString() + " or.";
                 //TODO:UI
                 break;
             default:

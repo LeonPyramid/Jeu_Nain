@@ -5,7 +5,7 @@ using static Function;
 [CreateAssetMenu(fileName = "Lore", menuName = "Data/Lore")]
 public class Lore : ScriptableObject
 {
-    
+    public float loreProba;
     public List<LoreList> textList;
 
 }

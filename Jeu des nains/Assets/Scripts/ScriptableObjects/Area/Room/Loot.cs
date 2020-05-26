@@ -7,8 +7,8 @@ public class Loot : Room
 {
     public LootType type;
     public Fork amountFork;
-    public List<Artefact> artefacts;
-    public List<CharacterData> mobType;
+    public Artefact artefact;
+    public CharacterData mobType;
     [TextArea(3, 10)]
     public string entered;
 }

@@ -25,6 +25,6 @@ public class Area : ScriptableObject
     [Header("Fight")]
     public List<Fight> fights;
     public float fightProba;
-    public Sprite figtLogo;
+    public Sprite fightLogo;
     public Fork fightLoose;
 }

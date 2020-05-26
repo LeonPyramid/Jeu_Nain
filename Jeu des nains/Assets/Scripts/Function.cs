@@ -8,5 +8,14 @@ public sealed class Function
     {
         return list[Random.Range(0, list.Count)];
     }
+    public static List<T> CreateOf<T>(T obj,int amount)
+    {
+        List<T> lst = new List<T>();
+        for (int i = 0; i < amount; i++)
+        {
+            lst.Add(obj);
+        }
+        return lst;
+    }
 }
 

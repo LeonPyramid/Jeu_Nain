@@ -36,7 +36,7 @@ public class TextBox : MonoBehaviour, IPointerDownHandler
 
     public void AddText (List<string> str,bool isImg,string leftTxt=null,string rightTxt=null, Sprite leftImg = null, Sprite rightImg = null)
     {
-        text = str;
+        text.AddRange(str);
         isImage = isImg;
         if (isImg)
         {
