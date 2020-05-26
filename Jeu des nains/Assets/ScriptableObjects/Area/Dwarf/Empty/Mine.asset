@@ -21,6 +21,6 @@ MonoBehaviour:
   goldAmmount:
     min: 0
     max: 0
-  stuffCost: 0
+  stuffCost: 5
   victory: "Votre \xE9quipe m\xE9rite sa r\xE9putation, vos coffres d\xE9bordent d'or."
   defeat: "Vous appelez \xE7a une mine !"

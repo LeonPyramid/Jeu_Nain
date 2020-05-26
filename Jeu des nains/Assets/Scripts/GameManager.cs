@@ -24,19 +24,24 @@ public class GameManager : MonoBehaviour
     public List<Area> areas;
     public List<int> futuredepth;//TODO: Gestion des profondeurs
     private List<LoreList> loreList;
+    public List<string> test;
     private float loreproba;
     public bool entering;
 
     void Awake()
     {
+        Instance = this;
         dial = new List<string>();
         areas = new List<Area>();
         areas.Add(parameters.Zone1);
         depht = 0;
-        Instance = this;
         actualArea = parameters.Zone1;
         roomType = RoomType.None;
-        TextBox.Instance.AddText(parameters.presentation, false, leftTxt: "entrer", rightTxt: "entrer");
+
+    }
+    private void Start()
+    {
+        TextBox.Instance.AddText(test, false, leftTxt: "entrer", rightTxt: "entrer");
         LoadNextArea();
     }
 
@@ -44,9 +49,12 @@ public class GameManager : MonoBehaviour
     {
         actualArea = areas[0];
         areas.RemoveAt(0);
-        loreList = actualArea.lore.textList;
+        loreList = new List<LoreList>();
+        loreList.AddRange(actualArea.lore.textList);
         loreproba = actualArea.lore.loreProba;
         entering = true;
+        roomType = RoomType.Empty;
+        EnterRoom(roomType);
     }
 
     public void EnterRoom(RoomType type)
@@ -73,17 +81,17 @@ public class GameManager : MonoBehaviour
                 TextBox.Instance.AddText(dial, false, rightTxt: parameters.buyButton, leftTxt: parameters.leaveButton);
                 break;
             case RoomType.Fight:
-                actualRoom = RandomGet(actualArea.empties);
+                actualRoom = RandomGet(actualArea.fights);
                 dial.AddRange(actualRoom.textIn);
                 TextBox.Instance.AddText(dial, false, rightTxt: parameters.exploitBUtton, leftTxt: parameters.leaveButton);
                 break;
             case RoomType.Empty:
-                actualRoom = RandomGet(actualArea.loots);
+                actualRoom = RandomGet(actualArea.empties);
                 dial.AddRange(actualRoom.textIn);
                 TextBox.Instance.AddText(dial, false, rightTxt: parameters.enterButton, leftTxt: parameters.leaveButton);
                 break;
             case RoomType.Loot:
-                actualRoom = RandomGet(actualArea.fights);
+                actualRoom = RandomGet(actualArea.loots);
                 dial.AddRange(actualRoom.textIn);
                 nbEnnemies = Random.Range((actualRoom as Fight).ennemyAmount.min, (actualRoom as Fight).amountFork.max);
                 dial.Add("Il y a en face de toi " + nbEnnemies.ToString() + " " + (actualRoom as Fight).ennemy.race + "!");
@@ -247,15 +255,15 @@ public class GameManager : MonoBehaviour
             case RoomType.None:
                 if (isRight)
                 {
-                    EnterRoom(room1);
                     roomType = room1;
                 }
                 else
                 {
-                    EnterRoom(room2);
                     roomType = room2;
+
                 }
                 depht += 1;
+                EnterRoom(roomType);
                 return;
             default:
                 break;
@@ -263,6 +271,8 @@ public class GameManager : MonoBehaviour
         if(roomType != None)
         {
             roomType = None;
+            room1 = None;
+            room2 = None;
             float roomProba = Random.value;
             if (actualArea.shopProba > roomProba)
             {
@@ -270,19 +280,19 @@ public class GameManager : MonoBehaviour
                 room1logo = actualArea.shopLogo;
             }
             else { roomProba -= actualArea.shopProba; }
-            if (roomType != None && actualArea.emptyProba > roomProba)
+            if (room1 == None && actualArea.emptyProba > roomProba)
             {
                 room1 = RoomType.Empty;
                 room1logo = actualArea.emptyLogo;
             }
             else { roomProba -= actualArea.emptyProba; }
-            if (roomType != None && actualArea.lootProba > roomProba)
+            if (room1 == None && actualArea.lootProba > roomProba)
             {
                 room1 = RoomType.Loot;
                 room1logo = actualArea.lootLogo;
             }
             else { roomProba -= actualArea.lootProba; }
-            if (roomType != None && actualArea.fightProba > roomProba)
+            if (room1 == None && actualArea.fightProba > roomProba)
             {
                 room1 = RoomType.Fight;
                 room1logo = actualArea.fightLogo;
@@ -294,19 +304,19 @@ public class GameManager : MonoBehaviour
                 room2logo = actualArea.shopLogo;
             }
             else { roomProba -= actualArea.shopProba; }
-            if (roomType != None && actualArea.emptyProba > roomProba)
+            if (room2 == None && actualArea.emptyProba > roomProba)
             {
                 room2 = RoomType.Empty;
                 room2logo = actualArea.emptyLogo;
             }
             else { roomProba -= actualArea.emptyProba; }
-            if (roomType != None && actualArea.lootProba > roomProba)
+            if (room2 == None && actualArea.lootProba > roomProba)
             {
                 room2 = RoomType.Loot;
                 room2logo = actualArea.lootLogo;
             }
             else { roomProba -= actualArea.lootProba; }
-            if (roomType != None && actualArea.fightProba > roomProba)
+            if (room2 == None && actualArea.fightProba > roomProba)
             {
                 room2 = RoomType.Fight;
                 room2logo = actualArea.fightLogo;

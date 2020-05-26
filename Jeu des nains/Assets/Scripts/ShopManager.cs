@@ -5,10 +5,19 @@ using static Function;
 
 public class ShopManager : MonoBehaviour
 {
-    public static ShopManager Instance { get; private set; }
-    void Awake()
+    private static ShopManager _instance;
+    public static ShopManager Instance
     {
-        Instance = this;
+        get
+        {
+            if (_instance == null)
+                _instance = FindObjectOfType<ShopManager>();
+            return _instance;
+        }
+    }
+    void Start()
+    {
+        _instance = this;
     }
 
         private SellInfo info;

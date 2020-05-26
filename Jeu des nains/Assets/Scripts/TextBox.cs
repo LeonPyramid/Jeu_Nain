@@ -7,7 +7,16 @@ using UnityEngine.EventSystems; // Required when using Event data.
 
 public class TextBox : MonoBehaviour, IPointerDownHandler
 {
-    public static TextBox Instance { get; private set; }
+    private static TextBox _instance;
+    public static TextBox Instance
+    {
+        get
+        {
+            if (_instance == null)
+                _instance = FindObjectOfType<TextBox>();
+            return _instance;
+        }
+    }
     public Text textArea;
     private bool disabled = false;
     private List<string> text;
@@ -27,7 +36,7 @@ public class TextBox : MonoBehaviour, IPointerDownHandler
 
     public void Awake()
     {
-        Instance = this;
+        _instance = this;
         buttons.Add(leftTextButton.button);
         buttons.Add(rightTextButton.button);
         buttons.Add(leftImageButton.button);
@@ -36,6 +45,8 @@ public class TextBox : MonoBehaviour, IPointerDownHandler
 
     public void AddText (List<string> str,bool isImg,string leftTxt=null,string rightTxt=null, Sprite leftImg = null, Sprite rightImg = null)
     {
+        if (text == null)
+            text = new List<string>();
         text.AddRange(str);
         isImage = isImg;
         if (isImg)

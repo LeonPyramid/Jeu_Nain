@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class StateManager : MonoBehaviour
 {
-    public static StateManager Instance { get; private set; }
-    private GameParameters parameters = GameManager.Instance.parameters;
-    void Awake()
+    private static StateManager _instance;
+    public static StateManager Instance
     {
-        Instance = this;
-        team = parameters.team;
-        artefacts = new List<Artefact>();
-        beer = parameters.beer;
-        stuff = parameters.stuff;
-        UpdateStats();
+        get
+        {
+            if (_instance == null)
+                _instance = FindObjectOfType<StateManager>();
+            return _instance;
+        }
     }
+    private GameParameters parameters;
     public List<CharacterData> team { get; private set; }
     public List<Artefact> artefacts { get; private set; }
     public int beer { get; private set; }
@@ -23,6 +23,16 @@ public class StateManager : MonoBehaviour
     public int stuffMax { get; private set; }
     public int gold { get; private set; }
     private int beerConsumed;
+    void Start()
+    {
+        _instance = this;
+        parameters = GameManager.Instance.parameters;
+        team = parameters.team;
+        artefacts = new List<Artefact>();
+        beer = parameters.beer;
+        stuff = parameters.stuff;
+        UpdateStats();
+    }
 
     public void AddBeer(int amount)
     {

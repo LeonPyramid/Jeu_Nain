@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dwarf
   m_EditorClassIdentifier: 
   Entering: j'y suis
-  lore: {fileID: 11400000, guid: d4cd737f833039140a5ee2f9ec85858f, type: 2}
+  lore: {fileID: 11400000, guid: eeb559900faaf1b498b1f4f95d6ea773, type: 2}
   shops:
   - {fileID: 11400000, guid: 38b5787aa5bf4134aa5b3af743ed2f60, type: 2}
   shopProba: 0.25
@@ -26,7 +26,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 81672aaae6d77e84a95cd2dfaba6f998, type: 2}
   lootProba: 0.25
   lootLogo: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  fights: []
+  fights:
+  - {fileID: 11400000, guid: 6af0b466ac0d646488f3d340652159ca, type: 2}
   fightProba: 0.6
   fightLogo: {fileID: 21300000, guid: 97da8ced8639c4b4795ccb68274034f6, type: 3}
   fightLoose:
