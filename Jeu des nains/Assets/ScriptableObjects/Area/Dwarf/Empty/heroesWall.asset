@@ -12,13 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ea94a4c9fd9a740954f23d5d9dce97, type: 3}
   m_Name: heroesWall
   m_EditorClassIdentifier: 
-  textIn: []
+  textIn:
+  - Vous arrivez devant un mur represantant les plus grand fait d'amre d'un heros
+    ancien, il semble fait d'or pure
   chance: 0
-  textOut: 
+  textOut: "Vous quittez la pi\xE8ce"
   proba: 0
   goldAmmount:
     min: 0
     max: 0
   stuffCost: 0
-  victory: 
-  defeat: 
+  victory: "Le mur est d\xE9truit mais vos coffres sont pleins"
+  defeat: "Vous avez d\xE9truit l'histoire de ce grand nain sans r\xE9ussir \xE0 r\xE9cup\xE9rer
+    la moindre pi\xE8ce d'or, honte sur vous !"

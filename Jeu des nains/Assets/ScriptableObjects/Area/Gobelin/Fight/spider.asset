@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 251ba58de90609448ba2e7363883a5d7, type: 3}
   m_Name: spider
   m_EditorClassIdentifier: 
-  textIn: []
+  textIn:
+  - "Des toiles d'araign\xE9e vous indiquent la pr\xE9sence de monstres arachno\xEFdes "
   chance: 0
-  textOut: 
-  win: 
-  loose: 
-  fleeLose: 
+  textOut: "Vous laissez ces cr\xE9ature tranquilles"
+  win: "Ces monstres sont mort et leurs estomacs \xE9taient pleins d'objets int\xE9ressants"
+  loose: "Elles vous ont \xE9cras\xE9, la nature et les nains ne font pas bon m\xE9nage"
+  fleeLose: "Vous laissez tomber du mat\xE9riel dans une toile d'araign\xE9e"
   ennemyAmount:
     min: 0
     max: 0

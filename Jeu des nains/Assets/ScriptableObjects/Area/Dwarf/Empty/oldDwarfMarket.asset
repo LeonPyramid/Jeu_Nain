@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ea94a4c9fd9a740954f23d5d9dce97, type: 3}
   m_Name: oldDwarfMarket
   m_EditorClassIdentifier: 
-  textIn: []
+  textIn:
+  - "Vous arrivez dans un ancien march\xE9 nain, des ressources pourraient s'y cacher"
   chance: 0
-  textOut: 
+  textOut: "Vous quittez le march\xE9"
   proba: 0
   goldAmmount:
     min: 0
     max: 0
   stuffCost: 0
-  victory: 
-  defeat: 
+  victory: "Le temps n'a donc pas tout d\xE9truit ! les caisses \xE9taient encore
+    pleines"
+  defeat: "Des bandi ont d\xE9j\xE0 du piller cet endroit, il ne reste rien"

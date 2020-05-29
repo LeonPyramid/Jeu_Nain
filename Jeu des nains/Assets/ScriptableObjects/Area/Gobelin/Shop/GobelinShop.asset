@@ -23,7 +23,7 @@ MonoBehaviour:
   beerDialog:
   - inTxt: "Vous croisez un gobelin \xE0 l'apparence sympathique qui vous propose
       d'acheter sa r\xE9serve de bi\xE8re, ils sont plus malins qu'il n'y para\xEEt"
-    outTxt: 
+    outTxt: "Le gobelin dispar\xE9 dans l'ombre"
     isDistrib: 0
     distribLoose: 
     distribWin: 
@@ -33,7 +33,7 @@ MonoBehaviour:
   artefactDialog:
   - inTxt: "Vous croisez un gobelin \xE0 l'apparence sympathique qui vous montre un
       objet \xE9trange qui pourrait vous \xEAtre utile"
-    outTxt: 
+    outTxt: "Le gobelin dispar\xE9 dans l'ombre"
     isDistrib: 0
     distribLoose: 
     distribWin: 
@@ -42,8 +42,9 @@ MonoBehaviour:
     min: 0
     max: 0
   memberDialog:
-  - inTxt: 
-    outTxt: 
+  - inTxt: "Vous croisez une \xE9quipe de gobelins en soif d'aventure qui accepte
+      de partir avec vous contre un peu d'or"
+    outTxt: Vous poursuivez votre chemin
     isDistrib: 0
     distribLoose: 
     distribWin: 
@@ -55,7 +56,7 @@ MonoBehaviour:
   stuffDialog:
   - inTxt: "Vous croisez un gobelin \xE0 l'apparence sympathique qui a en sa possession
       de l'\xE9quipement int\xE9ressant et semble int\xE9ress\xE9 par votre or "
-    outTxt: 
+    outTxt: "Le gobelin dispar\xE9 dans l'ombre"
     isDistrib: 0
     distribLoose: 
     distribWin: 

@@ -12,13 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ea94a4c9fd9a740954f23d5d9dce97, type: 3}
   m_Name: weakCity
   m_EditorClassIdentifier: 
-  textIn: []
+  textIn:
+  - Vous arrivez dans une ville gobeline assez initerressante masi un de vos homme
+    vous propose de la piller
   chance: 0
-  textOut: 
+  textOut: Vous laissez la ville tranquille
   proba: 0
   goldAmmount:
     min: 0
     max: 0
   stuffCost: 0
-  victory: 
-  defeat: 
+  victory: "Vos coffres sont pleins mais arriverez-vous \xE0 vivre avec toute ces
+    vies innocente sur les mains ? Je plaisante, ce sont des gobelins apr\xE8s tout "
+  defeat: "Ils n'\xE9taient pas si faibles que \xE7a, vous avez \xE9tait oblig\xE9
+    de partir en laissant une partie de votre mat\xE9riel, la prochaine fois quit
+    \xE0 faire le mal, faites le bien"

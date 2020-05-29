@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ea94a4c9fd9a740954f23d5d9dce97, type: 3}
   m_Name: oldCivilisation
   m_EditorClassIdentifier: 
-  textIn: []
+  textIn:
+  - "Vous arrivez dans ce qui semble \xEAtre une ancienne ville antique, vous n'aviez
+    jamais rien vu de tel, si vous n'\xE9tiez pas nain vous seriez impressionn\xE9"
   chance: 0
   textOut: 
   proba: 0

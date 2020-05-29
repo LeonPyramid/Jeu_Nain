@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 251ba58de90609448ba2e7363883a5d7, type: 3}
   m_Name: madDwarf
   m_EditorClassIdentifier: 
-  textIn: []
+  textIn:
+  - "Vous remarquer des nains au loin, ils se battent et on l'air d'avoir perdu la
+    t\xEAte "
   chance: 0
-  textOut: 
-  win: 
-  loose: 
-  fleeLose: 
+  textOut: Vous quittez la zone
+  win: "La victoire est v\xF4tre, comment des nains ont-ils pu tomber si bas "
+  loose: "Votre faiblesse n'a d\xE9gale que votre honte"
+  fleeLose: "Ces fous se sont attaqu\xE9 \xE0 votre \xE9quipement pour trouver de
+    la bi\xE8re"
   ennemyAmount:
     min: 0
     max: 0
