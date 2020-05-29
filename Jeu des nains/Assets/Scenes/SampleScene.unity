@@ -516,8 +516,7 @@ MonoBehaviour:
   actualRoom: {fileID: 0}
   areas: []
   futuredepth: 
-  test:
-  - sdf
+  test: []
   entering: 0
 --- !u!114 &711596209
 MonoBehaviour:

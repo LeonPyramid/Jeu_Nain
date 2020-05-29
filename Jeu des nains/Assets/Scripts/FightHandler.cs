@@ -5,10 +5,15 @@ using UnityEngine;
 public class FightHandler : MonoBehaviour
 {
     public static FightHandler Instance { get; private set; }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
     public int CalculateFight(List<CharacterData> ennemies)
     {
-        int teamPower = 0;
-        int ennemyPower = 0;
+        float teamPower = 0;
+        float ennemyPower = 0;
         float killGap;
         float winProba;
         foreach (var item in StateManager.Instance.team)

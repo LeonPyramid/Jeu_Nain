@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 688e045c5b4b3f5449f6dcc39f0e039b, type: 3}
   m_Name: Dwarf
   m_EditorClassIdentifier: 
-  Entering: j'y suis
+  Entering: On entre dans la zone naine
   lore: {fileID: 11400000, guid: eeb559900faaf1b498b1f4f95d6ea773, type: 2}
   shops:
   - {fileID: 11400000, guid: 38b5787aa5bf4134aa5b3af743ed2f60, type: 2}
@@ -28,7 +28,7 @@ MonoBehaviour:
   lootLogo: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   fights:
   - {fileID: 11400000, guid: 6af0b466ac0d646488f3d340652159ca, type: 2}
-  fightProba: 0.6
+  fightProba: 0.25
   fightLogo: {fileID: 21300000, guid: 97da8ced8639c4b4795ccb68274034f6, type: 3}
   fightLoose:
     min: 5

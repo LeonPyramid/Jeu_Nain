@@ -41,6 +41,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c73f5e18723301c4c8773249972dcba3, type: 2}
   - {fileID: 11400000, guid: c73f5e18723301c4c8773249972dcba3, type: 2}
   - {fileID: 11400000, guid: c73f5e18723301c4c8773249972dcba3, type: 2}
+  - {fileID: 11400000, guid: c73f5e18723301c4c8773249972dcba3, type: 2}
   artefacts: []
   beer: 50
   stuff: 50
@@ -55,6 +56,6 @@ MonoBehaviour:
   enterButton: Examiner
   noMoney: Vous n'avez pas assez d'argent!
   presentation:
-  - Bonjour
-  - Oui
-  - Clique
+  - "la pr\xE9sentation"
+  - du
+  - jeu

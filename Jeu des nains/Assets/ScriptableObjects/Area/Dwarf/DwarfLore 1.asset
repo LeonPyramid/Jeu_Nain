@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 677352666d112d5409e5dec82a3b28f7, type: 3}
   m_Name: DwarfLore 1
   m_EditorClassIdentifier: 
-  loreProba: 0
+  loreProba: 0.5
   textList:
   - text:
-    - 424
+    - phrase 1
   - text:
-    - 425734
+    - phrase 2
   - text:
-    - 867888
+    - phrase 3

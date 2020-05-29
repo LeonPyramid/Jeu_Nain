@@ -23,15 +23,19 @@ public class StateManager : MonoBehaviour
     public int stuffMax { get; private set; }
     public int gold { get; private set; }
     private int beerConsumed;
+    private void Awake()
+    {
+        _instance = this; 
+    }
     void Start()
     {
-        _instance = this;
         parameters = GameManager.Instance.parameters;
         team = parameters.team;
-        artefacts = new List<Artefact>();
-        beer = parameters.beer;
-        stuff = parameters.stuff;
         UpdateStats();
+        artefacts = new List<Artefact>();
+        AddBeer (parameters.beer);
+        AddStuff (parameters.stuff);
+        gold = parameters.gold;
     }
 
     public void AddBeer(int amount)

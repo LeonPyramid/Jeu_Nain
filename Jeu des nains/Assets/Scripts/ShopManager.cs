@@ -15,15 +15,21 @@ public class ShopManager : MonoBehaviour
             return _instance;
         }
     }
-    void Start()
+    private void Awake()
     {
         _instance = this;
     }
 
-        private SellInfo info;
+    private SellInfo info;
+
+    void Start()
+    {
+
+    }
 
     public void SetSell(Shop shop)
     {
+        info = new SellInfo();
         //TODO: envoi des dialogues
         info.type = RandomGet(shop.typeAvailable);
         switch (info.type)

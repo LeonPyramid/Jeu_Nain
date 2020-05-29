@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6dc49cdc7f6a5e44b4af7050c800a48, type: 3}
   m_Name: Dwarf
   m_EditorClassIdentifier: 
+  race: Nain
   power: 1
+  price: 10
   Image: {fileID: 0}
   lore: 
   beerConsumption: 1
+  immortal: 0

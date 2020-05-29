@@ -12,40 +12,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c9a589f3a32ac45be7cd4bf2ce6154, type: 3}
   m_Name: DwarfShop
   m_EditorClassIdentifier: 
-  text: []
+  textIn: []
   chance: 0
-  typeAvailable: 
-  beerValue: 0
+  textOut: 
+  typeAvailable: 020000000300000004000000
+  beerValue: 3
   beerFork:
-    min: 0
-    max: 0
+    min: 5
+    max: 10
   beerDialog:
   - inTxt: "Vous croisez une \xE9quipe de nain entrain de rebrousser chemin, ces l\xE2ches
       acceptent de vous c\xE9der un peu de leur bi\xE8re \xE0 contre coeur."
-    outTxt: 
+    outTxt: "Vous vous eloignez de cette \xE9quipe."
     isDistrib: 0
     distribLoose: 
+    distribWin: 
+    data: {fileID: 0}
   artefactList:
   - {fileID: 0}
   artefactDialog: []
-  memberList: []
   memberFork:
-    min: 0
-    max: 0
+    min: 3
+    max: 8
   memberDialog:
   - inTxt: "Vous croisez une \xE9quipe de nain entrain de rebrousser chemin, une partit
       d'entre eux \xE0 qui il reste un peu de courage vous propose de vous accompagner
       moyennant finance, ils restent nains apr\xE8s tout"
-    outTxt: 
+    outTxt: "Vous vous eloignez de cette \xE9quipe."
     isDistrib: 0
     distribLoose: 
-  stuffValue: 0
+    distribWin: 
+    data: {fileID: 11400000, guid: 798a7a8ba42ecc84690d9db8980bac50, type: 2}
+  stuffValue: 3
   stuffFork:
-    min: 0
-    max: 0
+    min: 10
+    max: 30
   stuffDialog:
   - inTxt: "Vous croisez une \xE9quipe de nain entrain de rebrousser chemin, ces l\xE2ches
       vous proposent d'acheter leurs \xE9quipements, ils n'en auront plus besoin"
-    outTxt: 
+    outTxt: "Vous vous eloignez de cette \xE9quipe."
     isDistrib: 0
     distribLoose: 
+    distribWin: 
+    data: {fileID: 0}
