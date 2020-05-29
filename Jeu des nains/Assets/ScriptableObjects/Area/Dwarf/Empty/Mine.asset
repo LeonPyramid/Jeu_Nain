@@ -17,10 +17,10 @@ MonoBehaviour:
     pour exploiter les minerais rares."
   chance: 0
   textOut: Vous quittez la mine.
-  proba: 0
+  proba: 0.5
   goldAmmount:
-    min: 0
-    max: 0
+    min: 15
+    max: 30
   stuffCost: 5
   victory: "Votre \xE9quipe m\xE9rite sa r\xE9putation, vos coffres d\xE9bordent d'or."
   defeat: "Vous appelez \xE7a une mine !"

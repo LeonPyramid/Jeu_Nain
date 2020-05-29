@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Dwarf
   m_EditorClassIdentifier: 
   Entering: On entre dans la zone naine
+  leavingRoom: "Vous arrivez en face de deux portes grav\xE9es dans la pierre, taill\xE9es
+    par vos anc\xE8tres. En haut de chacune d'ente elle se trouve un sympole. Par
+    laquelle souhaitez-vous passer?"
   lore: {fileID: 11400000, guid: eeb559900faaf1b498b1f4f95d6ea773, type: 2}
   shops:
   - {fileID: 11400000, guid: 38b5787aa5bf4134aa5b3af743ed2f60, type: 2}
