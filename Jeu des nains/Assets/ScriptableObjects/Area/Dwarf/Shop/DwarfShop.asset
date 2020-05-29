@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c9a589f3a32ac45be7cd4bf2ce6154, type: 3}
   m_Name: DwarfShop
   m_EditorClassIdentifier: 
-  text: []
+  textIn: []
   chance: 0
+  textOut: 
   typeAvailable: 
   beerValue: 0
   beerFork:
@@ -22,13 +23,14 @@ MonoBehaviour:
   beerDialog:
   - inTxt: "Vous croisez une \xE9quipe de nain entrain de rebrousser chemin, ces l\xE2ches
       acceptent de vous c\xE9der un peu de leur bi\xE8re \xE0 contre coeur."
-    outTxt: 
+    outTxt: vous poursuivez votre chemin
     isDistrib: 0
     distribLoose: 
+    distribWin: 
+    data: {fileID: 0}
   artefactList:
   - {fileID: 0}
   artefactDialog: []
-  memberList: []
   memberFork:
     min: 0
     max: 0
@@ -36,9 +38,11 @@ MonoBehaviour:
   - inTxt: "Vous croisez une \xE9quipe de nain entrain de rebrousser chemin, une partit
       d'entre eux \xE0 qui il reste un peu de courage vous propose de vous accompagner
       moyennant finance, ils restent nains apr\xE8s tout"
-    outTxt: 
+    outTxt: vous poursuivez votre chemin
     isDistrib: 0
     distribLoose: 
+    distribWin: 
+    data: {fileID: 0}
   stuffValue: 0
   stuffFork:
     min: 0
@@ -46,6 +50,8 @@ MonoBehaviour:
   stuffDialog:
   - inTxt: "Vous croisez une \xE9quipe de nain entrain de rebrousser chemin, ces l\xE2ches
       vous proposent d'acheter leurs \xE9quipements, ils n'en auront plus besoin"
-    outTxt: 
+    outTxt: vous poursuivez votre chemin
     isDistrib: 0
     distribLoose: 
+    distribWin: 
+    data: {fileID: 0}

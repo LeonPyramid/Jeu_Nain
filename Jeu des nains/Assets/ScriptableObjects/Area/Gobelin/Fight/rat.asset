@@ -12,12 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 251ba58de90609448ba2e7363883a5d7, type: 3}
   m_Name: rat
   m_EditorClassIdentifier: 
-  textIn: []
+  textIn:
+  - "Une odeur naus\xE9abonde et des bruits \xE9tranges vous indique la pr\xE9sence
+    de rats g\xE9ants dans la zone"
   chance: 0
-  textOut: 
-  win: 
-  loose: 
-  fleeLose: 
+  textOut: "Vous laissez ces salet\xE9es tranquilles"
+  win: "Ces monstruiosit\xE9s sont morte, et leur garde mang\xE9 regorge de materiel"
+  loose: "Vos hommes diront que la puanteur les a d\xE9concentr\xE9 mais c'est la
+    l\xE2chet\xE9 qui a caus\xE9 votre perte "
+  fleeLose: "Le parfum de la bi\xE8re a amen\xE9 un rat \xE0 s'attaquer \xE0 votre
+    mat\xE9riel"
   ennemyAmount:
     min: 0
     max: 0

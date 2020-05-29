@@ -12,13 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ea94a4c9fd9a740954f23d5d9dce97, type: 3}
   m_Name: goblinTotem
   m_EditorClassIdentifier: 
-  textIn: []
+  textIn:
+  - "Vous arrivez devant le totem d'une divinit\xE9 pa\xEFenne, de nombreuses richesses
+    semblent \xEAtre cach\xE9es \xE0 l'int\xE9rieur"
   chance: 0
-  textOut: 
+  textOut: Vous laissez le totem en place
   proba: 0
   goldAmmount:
     min: 0
     max: 0
   stuffCost: 0
-  victory: 
-  defeat: 
+  victory: "Vous avez d\xE9truit le symbole principal d'une religion gobelins et vous
+    avez les poches pleines, d'une pierre deux coups"
+  defeat: "Les gobelins vous d\xE9testent et vous n'avez rien pu r\xE9cup\xE9rer,
+    doubles \xE9checs, vous \xEAtes un pi\xE8tre commandant"

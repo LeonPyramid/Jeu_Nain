@@ -23,4 +23,4 @@ MonoBehaviour:
     max: 10
   artefact: {fileID: 0}
   mobType: {fileID: 11400000, guid: c73f5e18723301c4c8773249972dcba3, type: 2}
-  entered: "Vous r\xE9cup\xE9rez leur affaire, ils auraient fait l m\xEAme chose "
+  entered: "Vous r\xE9cup\xE9rez leur affaire, ils auraient fait la m\xEAme chose "

@@ -59,7 +59,7 @@ public class TextBox : MonoBehaviour, IPointerDownHandler
             leftText = leftTxt;
             rightText = rightTxt;
         }
-        UpdateDialog();
+        SwitchButton();
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -67,21 +67,29 @@ public class TextBox : MonoBehaviour, IPointerDownHandler
         UpdateDialog();
     }
 
-    private void UpdateDialog()
+    public void UpdateDialog()
     {
-        textArea.text = text[0];
-        text.RemoveAt(0);
-        if(text.Count > 1 && !disabled)
+        if(text.Count > 0)
+        {
+            textArea.text = text[0];
+            text.RemoveAt(0);
+            SwitchButton();
+        }
+    }
+
+    private void SwitchButton()
+    {
+        if (text.Count > 0 && !disabled)
         {
             DisableButtons();
         }
-        else if(text.Count == 1)
+        else if (text.Count == 0)
         {
             EnableButtons();
         }
     }
 
-    public void DisableButtons()
+    private void DisableButtons()
     {
         disabled = true;
         foreach (var item in buttons)

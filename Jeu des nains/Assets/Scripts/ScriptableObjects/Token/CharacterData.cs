@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class CharacterData : ScriptableObject
 {
     public string race;
-    public int power;
+    public float power;
     public int price;
     public Image Image;
     public string lore;

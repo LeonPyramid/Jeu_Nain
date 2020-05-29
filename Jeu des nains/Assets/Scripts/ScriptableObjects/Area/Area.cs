@@ -9,6 +9,8 @@ public class Area : ScriptableObject
 {
     [TextArea(3, 10)]
     public string Entering;
+    [TextArea(3, 10)]
+    public string leavingRoom;
     public Lore lore;
     [Header("Shops")]
     public List<Shop> shops;

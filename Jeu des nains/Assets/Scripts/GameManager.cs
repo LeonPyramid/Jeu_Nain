@@ -31,17 +31,16 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
-        dial = new List<string>();
-        areas = new List<Area>();
-        areas.Add(parameters.Zone1);
-        depht = 0;
-        actualArea = parameters.Zone1;
-        roomType = RoomType.None;
-
     }
     private void Start()
     {
-        TextBox.Instance.AddText(test, false, leftTxt: "entrer", rightTxt: "entrer");
+        dial = new List<string>();
+        dial.AddRange(parameters.presentation);
+        TextBox.Instance.AddText(dial, false);
+        areas = new List<Area>();
+        areas.Add(parameters.Zone1);
+        depht = 0;
+        roomType = RoomType.None;
         LoadNextArea();
     }
 
@@ -63,6 +62,7 @@ public class GameManager : MonoBehaviour
         if (entering)
         {
             dial.Add(actualArea.Entering);
+            entering = false;
         }
         if(Random.value < loreproba)
         {
@@ -80,27 +80,28 @@ public class GameManager : MonoBehaviour
                 dial.Add(sellInfo.dialog.inTxt);
                 TextBox.Instance.AddText(dial, false, rightTxt: parameters.buyButton, leftTxt: parameters.leaveButton);
                 break;
-            case RoomType.Fight:
-                actualRoom = RandomGet(actualArea.fights);
+            case RoomType.Loot:
+                actualRoom = RandomGet(actualArea.loots);
                 dial.AddRange(actualRoom.textIn);
-                TextBox.Instance.AddText(dial, false, rightTxt: parameters.exploitBUtton, leftTxt: parameters.leaveButton);
+                TextBox.Instance.AddText(dial, false, rightTxt: parameters.enterButton, leftTxt: parameters.leaveButton);
                 break;
             case RoomType.Empty:
                 actualRoom = RandomGet(actualArea.empties);
                 dial.AddRange(actualRoom.textIn);
-                TextBox.Instance.AddText(dial, false, rightTxt: parameters.enterButton, leftTxt: parameters.leaveButton);
+                TextBox.Instance.AddText(dial, false, rightTxt: parameters.exploitBUtton, leftTxt: parameters.leaveButton);
                 break;
-            case RoomType.Loot:
-                actualRoom = RandomGet(actualArea.loots);
+            case RoomType.Fight:
+                actualRoom = RandomGet(actualArea.fights);
                 dial.AddRange(actualRoom.textIn);
                 nbEnnemies = Random.Range((actualRoom as Fight).ennemyAmount.min, (actualRoom as Fight).amountFork.max);
-                dial.Add("Il y a en face de toi " + nbEnnemies.ToString() + " " + (actualRoom as Fight).ennemy.race + "!");
+                dial.Add("Il y a en face de toi " + nbEnnemies.ToString() + " " + (actualRoom as Fight).ennemy.race + "s!");
                 TextBox.Instance.AddText(dial, false, rightTxt: parameters.fightEnterButton, leftTxt: parameters.fightFleeButton);
                 break;
             default:
                 Debug.LogError("Type de salle pas pris en charge! " + roomType.ToString());
                 break;
         }
+        TextBox.Instance.UpdateDialog();
     }
 
     public void leftClick()
@@ -124,6 +125,7 @@ public class GameManager : MonoBehaviour
                     if(StateManager.Instance.gold >= sellInfo.price)
                     {
                         LootManager.Instance.AddLoot(LootType.gold, value: (-sellInfo.price));
+                        LootManager.Instance.AddLoot(sellInfo.type, value: sellInfo.amount, artefact: sellInfo.artefact, members: sellInfo.team);
                         if(sellInfo.type == LootType.artefact)
                         {
                             dial.Add("Vous avez acheté l'artefact" + sellInfo.artefact.artName + ":\n" + sellInfo.artefact.description);
@@ -142,10 +144,32 @@ public class GameManager : MonoBehaviour
                     int battle = FightHandler.Instance.CalculateFight(CreateOf((actualRoom as Fight).ennemy, nbEnnemies));
                     if (battle == -1)
                     {
-                        dial.Add((actualRoom as Fight).win);
-                        LootManager.Instance.AddLoot((actualRoom as Fight).type,
-                            value: Random.Range((actualRoom as Fight).amountFork.min, (actualRoom as Fight).amountFork.min),
-                            artefact: (actualRoom as Fight).artefact);
+                        string dialog = (actualRoom as Fight).win + "\n";
+                        LootType type = (actualRoom as Fight).type;
+                        int ammount = Random.Range((actualRoom as Fight).amountFork.min, (actualRoom as Fight).amountFork.max);
+                        Artefact artefact = (actualRoom as Fight).artefact;
+                        switch (type)
+                        {
+                            case LootType.artefact:
+                                dialog += "\nVous avez gagné l'artefact " + artefact.artName + ":\n" + artefact.description;
+                                break;
+                            case LootType.beer:
+                                dialog += "\nVous avez gagné " + ammount + "L de bière!";
+                                break;
+                            case LootType.stuff:
+                                dialog += "\nVous avez gagné " + ammount + "pièces d'équipement!";
+                                break;
+                            case LootType.gold:
+                                dialog += "\nVous avez gagné " + ammount + " d'or!";
+                                break;
+                            default:
+                                Debug.LogError("Type de loot pas prise en charge");
+                                break;
+                        }
+                        dial.Add(dialog);
+                        LootManager.Instance.AddLoot(type,
+                            value: ammount,
+                            artefact:artefact );
                     }
                     else
                     {
@@ -175,16 +199,19 @@ public class GameManager : MonoBehaviour
                         default:
                             break;
                     }
+                    dial.Add(dialog);
                 }
                 break;
             case RoomType.Empty:
                 if (isRight)
                 {
                     dial.Add("Vous aves utilisé " + (actualRoom as Empty).stuffCost.ToString() + " d'équipement.");
+                    LootManager.Instance.AddLoot(LootType.stuff, value:- (actualRoom as Empty).stuffCost);
                     if(Random.value < (actualRoom as Empty).proba)
                     {
                         int win = Random.Range((actualRoom as Empty).goldAmmount.min, (actualRoom as Empty).goldAmmount.max);
                         dial.Add((actualRoom as Empty).victory + "\nVous avez gagné " + win.ToString() + " or!");
+                        LootManager.Instance.AddLoot(LootType.gold, value:win);
                     }
                     else
                     {
@@ -201,7 +228,7 @@ public class GameManager : MonoBehaviour
                     if (lroom.amountFork.min >= 0)
                     {
                         int amount = Random.Range(lroom.amountFork.min, lroom.amountFork.max);
-                        LootManager.Instance.AddLoot(lroom.type, amount, lroom.artefact, CreateOf(lroom.mobType, 1));
+                        LootManager.Instance.AddLoot(lroom.type, amount, lroom.artefact, CreateOf(lroom.mobType, amount));
                         switch (lroom.type)
                         {
                             case LootType.artefact:
@@ -255,11 +282,11 @@ public class GameManager : MonoBehaviour
             case RoomType.None:
                 if (isRight)
                 {
-                    roomType = room1;
+                    roomType = room2;
                 }
                 else
                 {
-                    roomType = room2;
+                    roomType = room1;
 
                 }
                 depht += 1;
@@ -321,8 +348,10 @@ public class GameManager : MonoBehaviour
                 room2 = RoomType.Fight;
                 room2logo = actualArea.fightLogo;
             }
+            dial.Add(actualArea.leavingRoom);
             TextBox.Instance.AddText(dial, true,leftImg:room1logo,rightImg:room2logo);
         }
+        TextBox.Instance.UpdateDialog();
     }
 }
 public enum RoomType

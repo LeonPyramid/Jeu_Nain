@@ -12,12 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 251ba58de90609448ba2e7363883a5d7, type: 3}
   m_Name: lostBandit
   m_EditorClassIdentifier: 
-  textIn: []
+  textIn:
+  - un groupe de bandits perdus dans ce labyrinthe se rapproche de vous
   chance: 0
-  textOut: 
-  win: 
-  loose: 
-  fleeLose: 
+  textOut: Vous quittez la zone
+  win: "Ces faibles se sont fait massacrer, leurs larmes donneront go\xFBt \xE0 votre
+    bi\xE8re"
+  loose: "Ils ne sont m\xEAme pas \xE0 moiti\xE9 nains et vous avez perdu, qui pourraient
+    bien vous respecter maintenant "
+  fleeLose: "Un des bandis vous a d\xE9cloch\xE9 une fleche malencontreuse dans un
+    des chariots, ils paerons mais pas aujourd'hui"
   ennemyAmount:
     min: 0
     max: 0
