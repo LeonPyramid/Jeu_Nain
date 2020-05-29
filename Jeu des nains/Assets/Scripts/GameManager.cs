@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
             case RoomType.Fight:
                 actualRoom = RandomGet(actualArea.fights);
                 dial.AddRange(actualRoom.textIn);
-                nbEnnemies = Random.Range((actualRoom as Fight).ennemyAmount.min, (actualRoom as Fight).amountFork.max);
+                nbEnnemies = Random.Range((actualRoom as Fight).ennemyAmount.min, (actualRoom as Fight).ennemyAmount.max);
                 dial.Add("Il y a en face de toi " + nbEnnemies.ToString() + " " + (actualRoom as Fight).ennemy.race + "s!");
                 TextBox.Instance.AddText(dial, false, rightTxt: parameters.fightEnterButton, leftTxt: parameters.fightFleeButton);
                 break;
@@ -173,28 +173,30 @@ public class GameManager : MonoBehaviour
                     }
                     else
                     {
-                        dial.Add((actualRoom as Fight).loose + "\nVous avez perdu " + battle.ToString() + " membres de l'équipe");
+                        dial.Add((actualRoom as Fight).loose);
+                        dial.Add((actualRoom as Fight).loose + "\nVous avez perdu " + battle.ToString() + " membres de l'équipe"); 
                         StateManager.Instance.KillMember(battle);
                     }
                 }
-                if (Random.value > actualArea.fightProba)
+                else if (Random.value > actualArea.fightProba)
                 {
-                    string dialog = "";
-                    int amount = -Random.Range(actualArea.fightLoose.min, actualArea.fightLoose.max);
-                    int loose = Random.Range(0, 2);
-                    switch (loose)
+                    string dialog = (actualRoom as Fight).fleeLose;
+                    fightLoose lost = RandomGet(actualArea.fightLoose);
+                    int amount = Random.Range(lost.Item2.min, lost.Item2.max);
+
+                    switch (lost.Item1)
                     {
-                        case 0:
+                        case LootType.beer:
                             dialog += "\nVous avez perdu " + amount + "L de bière!";
-                            LootManager.Instance.AddLoot(LootType.beer, amount);
+                            LootManager.Instance.AddLoot(LootType.beer, -amount);
                             break;
-                        case 1:
+                        case LootType.stuff:
                             dialog += "\nVous avez perdu " + amount + "pièces d'équipement!";
-                            LootManager.Instance.AddLoot(LootType.stuff, amount);
+                            LootManager.Instance.AddLoot(LootType.stuff, -amount);
                             break;
-                        case 2:
+                        case LootType.gold:
                             dialog += "\nVous avez perdu " + amount + " d'or!";
-                            LootManager.Instance.AddLoot(LootType.gold, amount);
+                            LootManager.Instance.AddLoot(LootType.gold, -amount);
                             break;
                         default:
                             break;
@@ -264,8 +266,9 @@ public class GameManager : MonoBehaviour
                                 LootManager.Instance.AddLoot(lroom.type, amount);
                                 break;
                             case LootType.character:
-                                dialog += "\nVous avez gagné " + amount + " Menbres de votre équipe!";
+                                dialog += "\nVous avez perdu " + amount + " Menbres de votre équipe!";
                                 StateManager.Instance.KillMember(amount);
+                                //TODO:Defeat Manager
                                 break;
                             case LootType.gold:
                                 dialog += "\nVous avez perdu " + amount + " d'or!";
@@ -290,6 +293,26 @@ public class GameManager : MonoBehaviour
 
                 }
                 depht += 1;
+                StateManager.Instance.AddStuff(-parameters.stuffToDescend);
+                if (StateManager.Instance.stuff < 0)
+                {
+                    StateManager.Instance.StuffReset();
+                    string dialog = "Vous n'avez plus d'outils, votre équipe travaille plus lentement et bois donc plus de bière...";
+                    StateManager.Instance.ConsumeBeer(parameters.multOfBeerConsumed);
+                }
+                StateManager.Instance.ConsumeBeer();
+                if (StateManager.Instance.beer < 0)
+                {
+                    StateManager.Instance.BeerReset();
+                    string dialog = "Vous n'avez plus assez de bière pour tout vos nains...\n\n";
+                    if (Random.value > parameters.killingProba)
+                    {
+                        int pop = Random.Range(parameters.killingFork.min, parameters.killingFork.max);
+                        dialog += "Et dans la folie et la tristesse, certains des membres de votre équipe ont préféré se suicider!\n " +
+                            "Vous avez perdu " + pop.ToString() + "membres de votre équipe.";
+                        StateManager.Instance.KillMember(pop);
+                    }
+                }
                 EnterRoom(roomType);
                 return;
             default:

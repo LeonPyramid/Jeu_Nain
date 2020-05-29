@@ -41,13 +41,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c73f5e18723301c4c8773249972dcba3, type: 2}
   - {fileID: 11400000, guid: c73f5e18723301c4c8773249972dcba3, type: 2}
   - {fileID: 11400000, guid: c73f5e18723301c4c8773249972dcba3, type: 2}
-  - {fileID: 11400000, guid: c73f5e18723301c4c8773249972dcba3, type: 2}
   artefacts: []
-  beer: 50
+  beer: 200
   stuff: 50
   gold: 50
   maxStuffByMember: 5
-  maxBeerByMember: 8
+  maxBeerByMember: 10
+  killingProba: 0
+  killingFork:
+    min: 0
+    max: 0
+  stuffToDescend: 2
+  multOfBeerConsumed: 2
   fightEnterButton: Combattre
   fightFleeButton: Fuir
   buyButton: Acheter

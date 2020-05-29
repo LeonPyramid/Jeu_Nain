@@ -28,5 +28,13 @@ public class Area : ScriptableObject
     public List<Fight> fights;
     public float fightProba;
     public Sprite fightLogo;
-    public Fork fightLoose;
+    [SerializeField]
+    public List<fightLoose> fightLoose;
+}
+
+[System.Serializable]
+public class fightLoose
+{
+    public LootType Item1;
+    public Fork Item2;
 }

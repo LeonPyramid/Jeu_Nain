@@ -18,11 +18,14 @@ MonoBehaviour:
     laquelle souhaitez-vous passer?"
   lore: {fileID: 11400000, guid: eeb559900faaf1b498b1f4f95d6ea773, type: 2}
   shops:
-  - {fileID: 11400000, guid: 38b5787aa5bf4134aa5b3af743ed2f60, type: 2}
+  - {fileID: 11400000, guid: 59c3fa2fcb57fb0488012bb6f253c97f, type: 2}
   shopProba: 0.25
   shopLogo: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   empties:
   - {fileID: 11400000, guid: 2ff3ae968f437974c99e8511ad8c38f6, type: 2}
+  - {fileID: 11400000, guid: 9075bc569bf038844974d7c634032077, type: 2}
+  - {fileID: 11400000, guid: 7057f0303c9da4443b2e673e5409b22b, type: 2}
+  - {fileID: 11400000, guid: 6043b2601ad337944b3a05d4ee39ab4f, type: 2}
   emptyProba: 0.25
   emptyLogo: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   loots:
@@ -31,8 +34,20 @@ MonoBehaviour:
   lootLogo: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   fights:
   - {fileID: 11400000, guid: 6af0b466ac0d646488f3d340652159ca, type: 2}
+  - {fileID: 11400000, guid: deb163d5f96f41143a0121ff22cc9641, type: 2}
+  - {fileID: 11400000, guid: ba11eaba30ac0ee48b661161c2922579, type: 2}
   fightProba: 0.25
   fightLogo: {fileID: 21300000, guid: 97da8ced8639c4b4795ccb68274034f6, type: 3}
   fightLoose:
-    min: 5
-    max: 20
+  - Item1: 2
+    Item2:
+      min: 50
+      max: 70
+  - Item1: 5
+    Item2:
+      min: 25
+      max: 50
+  - Item1: 3
+    Item2:
+      min: 20
+      max: 35

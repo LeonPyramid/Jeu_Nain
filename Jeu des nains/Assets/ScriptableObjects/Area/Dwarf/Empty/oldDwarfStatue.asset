@@ -16,11 +16,11 @@ MonoBehaviour:
   - Vous rrivez devant une statue antique majestueuse qui semble recouverte d'or
   chance: 0
   textOut: Vous laissez la statue et partez
-  proba: 0
+  proba: 0.5
   goldAmmount:
-    min: 0
-    max: 0
-  stuffCost: 0
+    min: 30
+    max: 70
+  stuffCost: 6
   victory: "la statue est d\xE9truite mais vos coffres son plein, elle ne servait
     plus \xE0 rien de toute fa\xE7on"
   defeat: "Vous avez non seulement profan\xE9 la m\xE9moire de vos anc\xEAtres mais

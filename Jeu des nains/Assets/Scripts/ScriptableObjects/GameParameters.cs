@@ -24,7 +24,10 @@ public class GameParameters : ScriptableObject
     [Header("Parametre de calcul")]
     public int maxStuffByMember;
     public int maxBeerByMember;
-
+    public float killingProba;//Pour quand plus de bière
+    public Fork killingFork;
+    public int stuffToDescend;
+    public int multOfBeerConsumed;
     [Header("Paramètre d'UI")]
     public string fightEnterButton;
     public string fightFleeButton;

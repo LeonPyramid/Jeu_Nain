@@ -31,39 +31,41 @@ public class StateManager : MonoBehaviour
     {
         parameters = GameManager.Instance.parameters;
         team = parameters.team;
+        StuffUIManager.Instance.UpdtateTeam(team);
         UpdateStats();
         artefacts = new List<Artefact>();
         AddBeer (parameters.beer);
         AddStuff (parameters.stuff);
         gold = parameters.gold;
+        StuffUIManager.Instance.UpdateGold(gold);
     }
 
     public void AddBeer(int amount)
     {
         beer += amount;
         if (beer > beerMax) { beer = beerMax; }
-        //TODO: CHanger l'affichage
+        StuffUIManager.Instance.UpdateBeer(beer, beerMax);
         //TODO: Plus de bière
     }
 
     public void AddGold(int amount)
     {
         gold += amount;
-        //TODO: CHanger l'affichage
+        StuffUIManager.Instance.UpdateGold(gold);
     }
 
     public void AddStuff(int amount)
     {
         stuff += amount;
         if(stuff > stuffMax) { stuff = stuffMax; }
-        //TODO: CHanger l'affichage
+        StuffUIManager.Instance.UpdateStuff(stuff, stuffMax);
     }
 
     public void AddMember(CharacterData chr)
     {
         team.Add(chr);
         UpdateStats();
-        //TODO: CHanger l'affichage
+        StuffUIManager.Instance.UpdtateTeam(team);
     }
 
     public void KillMember(int amount)
@@ -75,16 +77,28 @@ public class StateManager : MonoBehaviour
             if (!team[mb].immortal) { team.RemoveAt(mb); }
         }
         UpdateStats();
-        //TODO: CHanger l'affichage
+        StuffUIManager.Instance.UpdtateTeam(team);
+        //TODO:Game Over
     }
 
-    public void ConsumeBeer()
+    public void ConsumeBeer(float mult = 1)
     {
         //TODO: Plus de bière
         //TODO: Plus d'item
-        beer -= beerConsumed;
+        beer -= Mathf.FloorToInt(beerConsumed*mult);
+        StuffUIManager.Instance.UpdateBeer(beer, beerMax);
+    }
+    public void BeerReset()
+    {
+        beer = 0;
+        StuffUIManager.Instance.UpdateBeer(beer, beerMax);
     }
 
+    public void StuffReset()
+    {
+        stuff = 0;
+        StuffUIManager.Instance.UpdateStuff(stuff, stuffMax);
+    }
     private void UpdateStats()
     {
         int cnt = 0;
@@ -95,6 +109,8 @@ public class StateManager : MonoBehaviour
         beerConsumed = cnt;
         stuffMax = team.Count * parameters.maxStuffByMember;
         beerMax = team.Count * parameters.maxBeerByMember;
+        StuffUIManager.Instance.UpdateStuff(stuff, stuffMax);
+        StuffUIManager.Instance.UpdateBeer(beer, beerMax);
     }
 
 

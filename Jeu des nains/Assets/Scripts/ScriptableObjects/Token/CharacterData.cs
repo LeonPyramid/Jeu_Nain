@@ -9,7 +9,7 @@ public class CharacterData : ScriptableObject
     public string race;
     public float power;
     public int price;
-    public Image Image;
+    public Sprite Image;
     public string lore;
     public int beerConsumption;
     public bool immortal;

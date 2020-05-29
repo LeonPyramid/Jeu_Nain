@@ -15,11 +15,11 @@ MonoBehaviour:
   textIn: []
   chance: 0
   textOut: 
-  typeAvailable: 
-  beerValue: 0
+  typeAvailable: 020000000300000004000000
+  beerValue: 2
   beerFork:
-    min: 0
-    max: 0
+    min: 30
+    max: 100
   beerDialog:
   - inTxt: "Vous croisez une \xE9quipe de nain entrain de rebrousser chemin, ces l\xE2ches
       acceptent de vous c\xE9der un peu de leur bi\xE8re \xE0 contre coeur."
@@ -32,8 +32,8 @@ MonoBehaviour:
   - {fileID: 0}
   artefactDialog: []
   memberFork:
-    min: 0
-    max: 0
+    min: 3
+    max: 8
   memberDialog:
   - inTxt: "Vous croisez une \xE9quipe de nain entrain de rebrousser chemin, une partit
       d'entre eux \xE0 qui il reste un peu de courage vous propose de vous accompagner
@@ -42,11 +42,11 @@ MonoBehaviour:
     isDistrib: 0
     distribLoose: 
     distribWin: 
-    data: {fileID: 0}
-  stuffValue: 0
+    data: {fileID: 11400000, guid: c73f5e18723301c4c8773249972dcba3, type: 2}
+  stuffValue: 5
   stuffFork:
-    min: 0
-    max: 0
+    min: 10
+    max: 15
   stuffDialog:
   - inTxt: "Vous croisez une \xE9quipe de nain entrain de rebrousser chemin, ces l\xE2ches
       vous proposent d'acheter leurs \xE9quipements, ils n'en auront plus besoin"

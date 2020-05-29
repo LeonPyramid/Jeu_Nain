@@ -21,13 +21,13 @@ MonoBehaviour:
   loose: "Ils ne sont m\xEAme pas \xE0 moiti\xE9 nains et vous avez perdu, qui pourraient
     bien vous respecter maintenant "
   fleeLose: "Un des bandis vous a d\xE9cloch\xE9 une fleche malencontreuse dans un
-    des chariots, ils paerons mais pas aujourd'hui"
+    des chariots, ils payerons mais pas aujourd'hui"
   ennemyAmount:
-    min: 0
-    max: 0
-  ennemy: {fileID: 0}
-  type: 0
+    min: 5
+    max: 10
+  ennemy: {fileID: 11400000, guid: e54dd48e56c77104fbf7c8deee3f7582, type: 2}
+  type: 5
   amountFork:
-    min: 0
-    max: 0
+    min: 50
+    max: 150
   artefact: {fileID: 0}

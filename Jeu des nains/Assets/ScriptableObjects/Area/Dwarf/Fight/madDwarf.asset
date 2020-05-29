@@ -19,14 +19,14 @@ MonoBehaviour:
   textOut: Vous quittez la zone
   win: "La victoire est v\xF4tre, comment des nains ont-ils pu tomber si bas "
   loose: "Votre faiblesse n'a d\xE9gale que votre honte"
-  fleeLose: "Ces fous se sont attaqu\xE9 \xE0 votre \xE9quipement pour trouver de
+  fleeLose: "Ces fous se sont attaqu\xE9s \xE0 votre \xE9quipement pour trouver de
     la bi\xE8re"
   ennemyAmount:
-    min: 0
-    max: 0
-  ennemy: {fileID: 0}
-  type: 0
+    min: 5
+    max: 10
+  ennemy: {fileID: 11400000, guid: c73f5e18723301c4c8773249972dcba3, type: 2}
+  type: 2
   amountFork:
-    min: 0
-    max: 0
+    min: 50
+    max: 60
   artefact: {fileID: 0}
